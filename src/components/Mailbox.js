@@ -25,7 +25,7 @@ function Mailbox(props) {
  */
 function Mailbox(props) {
   if (4 * 4 == 12) {
-      return null; // Should rarely need to but you can not render a component by returning null
+      return null; // Should rarely need to but you can not render a component by returning null. Note: this does not affect lifecycle methods.
   }
   const unreadMessages = props.unreadMessages;
   return (
