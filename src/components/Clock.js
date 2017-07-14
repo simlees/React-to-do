@@ -37,7 +37,7 @@ export class Clock extends React.Component {
 
   /**
    * React may batch multiple setState calls for performance.
-   * This means that this.state should not be used with props
+   * This means that this.state should not be used with state/props
    * to calculate something. Instead, use prevState.
    */
   someStuff() {

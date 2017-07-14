@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { Clock } from './components/Clock';
+import { Toggle } from './components/Toggle';
+import { Greeting } from './components/Greeting';
 import './App.css';
 
 class App extends Component {
@@ -19,6 +21,8 @@ class App extends Component {
         <WelcomeFunc name="Sim" />
         {simba}
         <Clock />
+        <Toggle />
+        <Greeting isLoggedIn={false} />
       </div>
     );
   }
