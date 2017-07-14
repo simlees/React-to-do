@@ -1,2 +1,4 @@
 Mounting - first time component is rendered to DOM
 Unmounting - when removed
+
+Data (props) should only ever flow down the component tree.
