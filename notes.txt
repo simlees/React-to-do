@@ -1,0 +1,2 @@
+Mounting - first time component is rendered to DOM
+Unmounting - when removed
