@@ -24,6 +24,9 @@ function Mailbox(props) {
  * @param {*} props 
  */
 function Mailbox(props) {
+  if (4 * 4 == 12) {
+      return null; // Should rarely need to but you can not render a component by returning null
+  }
   const unreadMessages = props.unreadMessages;
   return (
     <div>
