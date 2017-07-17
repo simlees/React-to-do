@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 
-/**
- * Behold, a conditional component.
- * @param {*} props 
- */
 export class ToDoItem extends React.Component {
   constructor(props) {
     super(props);
@@ -13,9 +9,9 @@ export class ToDoItem extends React.Component {
   render() {
     return (
       <li>
-        <h4 onClick={props.select}>{props.title}</h4>
-        <button onClick={props.edit}>Edit</button>
-        <button onClick={props.delete}>Delete</button>
+        <h4 onClick={this.props.select}>{this.props.title}</h4>
+        <button onClick={this.props.edit}>Edit</button>
+        <button onClick={this.props.deleteToDo}>Delete</button>
       </li>
     );
   }

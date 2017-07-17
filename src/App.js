@@ -1,42 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import { Clock } from './components/Clock';
-import { Toggle } from './components/Toggle';
-import { Greeting } from './components/Greeting';
+import { ToDoList } from './components/ToDoList';
+import { ToDoForm } from './components/ToDoForm';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: [
+        {
+          title: 'Do shopping',
+          content: 'Go to Sainsbos and buy stuff'
+        },
+        {
+          title: 'Walk the dog',
+          content: 'Go to the park'
+        }
+      ]
+    };
+  }
   render() {
-    // JSX gets compiled to standard JS objects
-    var simba = <Welcome name="Simba" />;
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          The time is {new Date().toLocaleTimeString()}.
-        </p>
-        <WelcomeFunc name="Sim" />
-        {simba}
-        <Clock />
-        <Toggle />
-        <Greeting isLoggedIn={false} />
+      <div className="to-do">
+        <ToDoList todos={this.state.todos}
+                  deleteToDo={i => this.deleteToDo(i)}/>
+        <ToDoForm />
       </div>
     );
   }
-}
-
-// This is a react component. Remember; classes are just ES6 sugar.
-function WelcomeFunc(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
-
-// Components must never modify their own props. Trust.
-class Welcome extends React.Component {
-  render() {
-    return <h1>Hello, {this.props.name}</h1>;
+  deleteToDo(i) {
+    console.log('deleting');
+    this.state.todos.splice(i, 1);
   }
 }
 
