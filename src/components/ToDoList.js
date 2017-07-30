@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { ToDoItem } from './ToDoItem';
+import { TodoItem } from './TodoItem';
 
 // Inline map
-export class ToDoList extends React.Component {
+export class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,10 +13,11 @@ export class ToDoList extends React.Component {
     return (
       <ul>
         {this.props.todos.map((todo, index) =>
-          <ToDoItem key={index.toString()}
+          <TodoItem key={index.toString()}
                     title={todo.title}
                     content={todo.content}
-                    deleteToDo={i => this.props.deleteToDo(i)} />
+                    deleteTodo={() => this.props.deleteTodo(index)}
+                    selectTodo={() => this.props.selectTodo(index)} />
         )}
       </ul>
     );
